@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+  <bean id="emp" class="model.Employee" autowire="byName">
+      <property name="name" value="abhishek"></property>
+      <property name="age" value="18"></property>
+      <property name="salary" value="800"></property>
+  </bean>
+    
+    <bean id="dept" class="model.Department">
+        <property name="departmentName" value="SCSIT"></property>
+    </bean>
+    <bean id="dept1" class="model.Department">
+        <property name="departmentName" value="DAVV"></property>
+    </bean>
+    <bean id="date" class="model.DateFormat" factory-method="getDate">
+        <constructor-arg name="datePattern" value="DD/MM/yyyy"></constructor-arg>
+        <constructor-arg name="date" value="20/12/2008"></constructor-arg>
+    </bean>
+
+</beans>
